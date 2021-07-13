@@ -42,7 +42,7 @@ p+
   geom_point(aes(colour = Confirmed), colour = "yellow") +
   xlab("SO NGUOI NHiEM")+
   ylab("NGAY")+
-  labs(title="D??? th??? th??? hi???n s??? lu???ng ca nhi???m covid 19 du???c xác nh???n t???i Newyork")
+  labs(title="Do thi the hien so luong ca nhiem covid 19 duoc xac nhan tai Newyork")
 
 ####################################
 #2- Bieu do cot-so luong ca tu vong covid 19 tai Newyork
@@ -50,7 +50,7 @@ ggplot(NY, aes(x=Deaths, y=Last_Update))  +
   geom_col(aes(color=Deaths,fill =Last_Update)) + 
   xlab("Deaths")+
   ylab("Last_Update")+
-  labs(title="D??? th??? th??? hi???n s??? ca t??? vong do covid 19 du???c xác nh???n t???i New York ")
+  labs(title="Do thi the hien so ca tu vong do covid 19 du???c xac nhan tai New York ")
 
 ###################################
 # 3- Bieu do duong - So ca hoi phuc tai Newyord
@@ -59,7 +59,7 @@ p+
   geom_line(aes(color = "Recovered",size = 1),colour="blue")+
   ylab("SO NGUOI HOI PHUC")+
   xlab("NGAY")+
-  labs(title="D??? th??? th??? hi???n s??? ca h???i ph???c t???i NEWYORK")
+  labs(title="Do thi the hien so ca hoi phuc tai NEWYORK")
 
 #######################################
 # 4-Bieu do diem - So ca nhiem benh tai WASHINTON
@@ -68,13 +68,13 @@ p+
   geom_point(aes(colour = Confirmed), colour = "orange") +
   xlab("SO NGUOI NHiEM")+
   ylab("NGAY")+
-  labs(title="D??? th??? th??? hi???n s??? lu???ng ca nhi???m covid 19 du???c xác nh???n t???i Washington")
+  labs(title="Do thi the hien so luong ca nhiem covid 19 du???c xac nhan tai Washington")
 
 #############################################
 # 5-Bieu do cot-so ca tu vong tai Washington
 ggplot(NY, aes(x=Deaths, y=Last_Update,fill= Deaths )) + 
   geom_col(aes(color=Deaths,fill =Last_Update)) + 
-  labs(title="D??? th??? th??? hi???n s??? lu???ng ca t??? vong do covid 19 du???c xác nh???n t???i Washington ")
+  labs(title="Do thi the hien so luong ca tu vong covid 19 du???c xac nhan tai Washington ")
 
 ##################################################
 #6 -Bieu do tron - So ca nhiem benh các khu vuc o My
@@ -85,7 +85,7 @@ fig <- plot_ly(data,
                text = ~Country_Region,
                textposition = 'inside')
 
-fig <- fig %>% layout(title = "S??? ca nhi???m covid 19 các khu v??? t???i M??? ",uniformtext=list(minsize=8, mode='hide'))
+fig <- fig %>% layout(title = "So ca nhiem covid 19 cac khu vuc tai MY ",uniformtext=list(minsize=8, mode='hide'))
 fig
 
 ##################################
@@ -93,7 +93,7 @@ fig
 ny_rec <- c(NY$Case_Fatality_Ratio)
 wst_rec <- c(WST$Case_Fatality_Ratio)
 
-plot(ny_rec,type = "o",col = "red",xlab = "NGAY",main = "So sánh t??? l??? t??? vong gi???a WASHITON VA NEW YORK ")
+plot(ny_rec,type = "o",col = "red",xlab = "NGAY",main = "So sanh ti le tu vong giua WASHITON VA NEW YORK ")
 par(new=TRUE)
 plot(wst_rec,type = "o",col = "green",xlab = "NGAY")
 legend("topright", legend=c("New York Case Fatality Ratio", "Washinton Case Fatality Ratio"),
@@ -106,7 +106,7 @@ ggplot(HW, aes(x=Confirmed, y=Last_Update))+
              colour = "skyblue")+
   xlab("SO NGUOI NHIEM")+
   ylab("NGAY")+
-  labs(title=" D??? th??? th??? hi???n s??? lu???ng ca nhi???m covid 19 du???c xác nh???n t???i HAWAII")
+  labs(title=" Do thi the hien so luong ca nhiem covid 19 duoc xac nhan tai HAWAII")
 
 ################################################
 #9-Bieu do cot - so nguoi tu vong cac khu vuc tai HAWAII
@@ -116,14 +116,14 @@ ggplot(HW, aes(x=Last_Update,
                y=Deaths,
                fill =Deaths)) + 
   theme_grey() +
-  labs(title="D??? th??? th??? hi???n s??? ngu???i t??? vong các khu v???c t???i HAWAII")
+  labs(title="Do thi the hien so nguoi tu vong cac khu vuc tai HAWAII")
 
 ##############################
 # 10 -Bieu do diem - so sanh ca nhiem benh giua NEW YORK va HAWAII
 ny_con <- c(NY$Confirmed)
 hw_con <- c(HW$Confirmed)
 
-plot(ny_con,type = "o",col = "red",xlab = "NGAY ",main = "So sánh t??? l??? nhi???m b???nh gi???a HAWAII VA NEW YORK ")
+plot(ny_con,type = "o",col = "red",xlab = "NGAY ",main = "So sanh ti le nhiem benh giua HAWAII VA NEW YORK ")
 par(new=TRUE)
 plot(hw_con,type = "o",col = "green",xlab = "NGAY")
 legend("topright", legend=c("New York Confirmed", "Hawaii Confirmed"),
@@ -135,15 +135,15 @@ ggplot(df[20: 26,], aes(x='', y=Confirmed, fill=Province_State)) +
   geom_bar(stat="identity", width=1) +
   theme_void() +
   coord_polar("y", start=0) + 
-  labs(title="D??? th??? th??? hi???n s??? lu???ng ca nhi???m covid 19 du???c xác nh???n ??? m???t s??? bang/thành ph??? t???i M???
-              trong ngày 04-06-2021") +
+  labs(title="Do thi the hien so luong ca nhiem covid 19 duocc xac nhan o mot so bang/thanh pho tai MY
+              trong ngay 04-06-2021") +
   geom_text(aes(label = paste0(Confirmed)), position = position_stack(vjust=0.5)) 
 
 #########################################
 #12- Bieu do duong- Ti le tu vong tai NewYord t??? 12/2020-07/2021
 ggplot(NY) + 
   geom_line(aes(y=Case_Fatality_Ratio, x=Last_Update, color=Case_Fatality_Ratio)) +
-  labs(title="Bi???u d??? th??? hi???n t??? l??? t??? vong gây ra b???i covid du???c xác nh???n ??? NewYord-M???
+  labs(title="Bieu do the hien ti le tu vong gay ra boi covid duoc xac nhan o NewYord-MY
               t??? 12/2020 d???n 07/2021", x="Last Update", y="Case Fatality Ratio")
 
 ########################################
@@ -154,8 +154,8 @@ fig2 <- plot_ly(data,
                values = ~Confirmed,
                text = ~Country_Region,
                textposition = 'inside')
-fig2 <- fig2 %>% layout(title = "D??? th??? th??? hi???n s??? lu???ng ca nhi???m b???nh b???i covid 19 du???c xác nh???n ??? các bang/thành ph???
-                         t???i M??? trong ngày 10-01-2020 ",uniformtext=list(minsize=8, mode='hide'))
+fig2 <- fig2 %>% layout(title = "Do thi the hien so luong ca nhiem benh boi covid 19 duoc xac nhan o cac bang/thanh pho
+                         tai MY trong ngay 10-01-2020 ",uniformtext=list(minsize=8, mode='hide'))
 fig2
 
 ################################################
@@ -167,8 +167,8 @@ fig3 <- plot_ly(data,
                 text = ~Country_Region,
                 textposition = 'inside')
 
-fig3 <- fig3 %>% layout(title = " D??? th??? th??? hi???n s??? lu???ng ca t??? vong b???i covid 19 du???c xác nh???n ??? m???t s??? bang/thành ph???
-                               t???i M??? trong ngày 10/01/2020 ",uniformtext=list(minsize=8, mode='hide'))
+fig3 <- fig3 %>% layout(title = " Do thi the hien so luong ca tu vong boi covid 19 duoc xac nhan o mot so bang/thanh pho
+                               tai MY trong ngay 10/01/2020 ",uniformtext=list(minsize=8, mode='hide'))
 fig3
 
 #####################################
@@ -183,8 +183,8 @@ fig4 <- df %>%
                   "HOI PHUC: ",Recovered),
     color = ~Confirmed,
   )
-fig4 <- fig4 %>% layout(title = " D??? th??? th??? hi???n s??? lu???ng ca nhi???m- t??? vong-h???i ph???c c???a 
-                           khu v???c M??? 01-09-2021 ",uniformtext=list(minsize=8, mode='hide'))
+fig4 <- fig4 %>% layout(title = " Do thi the hien so luong ca nhiem- tu vong-hoi phuc cua 
+                           khu vuc MY 01-09-2021 ",uniformtext=list(minsize=8, mode='hide'))
 fig4 
 
 #####################################
@@ -192,8 +192,8 @@ fig4
 ggplot(df, aes(x=Deaths, color=Province_State)) +
   geom_point(aes(x=Deaths, y=Province_State, fill =Province_State)) + 
   theme_grey() +
-  labs(title="D??? th??? th??? hi???n s??? lu???ng ca t??? vong b???i covid 19 du???c xác nh???n ??? các bang/thành ph??? t???i M???
-              trong ngày 04-03-2021")
+  labs(title="Do thi the hien so luong ca tu vong boi covid 19 duoc xac nhan o cac bang/thanh pho tai MY
+              trong ngay 04-03-2021")
 
 #################################
 #17 GEO_PLOT - So ca nhiem - Tu vong - Hoi phuc cua khu vuc tren the gioi 15-02-2021
@@ -207,16 +207,16 @@ fig5 <- data %>%
                   "HOI PHUC: ",Recovered),
     color = ~Confirmed,
   )
-fig5 <- fig5 %>% layout(title = " D??? th??? th??? hi???n s??? lu???ng ca nhi???m- t??? vong-h???i ph???c 
-    c???a khu v???c t???i M??? trong 15-02 2021  ",uniformtext=list(minsize=8, mode='hide'))
+fig5 <- fig5 %>% layout(title = " Do thi the hien so luong ca nhiem- tu vong-hoi phuc 
+    cua khu vuc tai MY trong 15-02 2021  ",uniformtext=list(minsize=8, mode='hide'))
 fig5
 
 #####################################
 #18- bieu do cot- So luong ca tu vong tai mot so bang/thanh pho tai MY trong 01-01-2020  
 ggplot(df1[1:20,], aes(x=Deaths, y=Province_State)) +
   geom_col(aes(x=Deaths, y=Province_State, fill = Province_State)) + 
-  labs(title=" s??? lu???ng ca t??? vong do covid 19 du???c xác nh???n ??? m???t s??? bang/thành ph??? t???i M???
-                            trong ngày 01-01-2020",x = "Deaths", y="Province")
+  labs(title=" so luong ca tu vong do covid 19 duoc xac nhan o mot so bang/thanh pho tai MY
+                            trong ngay 01-01-2020",x = "Deaths", y="Province")
 
 #########################
 #19-  Bieu do tron- so luong ca hoi phuc ??? mot so bang tai My trong ngay 10-01-2021
@@ -224,13 +224,13 @@ ggplot(df1[2:15,], aes(x='', y=Recovered, fill=Province_State)) +
   geom_bar(stat="identity", width=1) +
   theme_void() +
   coord_polar("y", start=0) + 
-  labs(title="S??? lu???ng ca h???i ph???c sau khi nhi???m covid 19 ??? m???t s??? bang/thành ph??? t???i M??? 
-                                                        trong ngày 2021-01-10") +
+  labs(title="So luong ca hoi phuc sau khi nhiem covid 19 o mot so bang/thanh pho tai MY
+                                                        trong ngay 2021-01-10") +
   geom_text(aes(label = paste0(Recovered)), position = position_stack(vjust=0.5)) 
 
 ###########################
 #20 -Bieu do diem- So luong ca tu vong tai NewYork tai MY t??? 01/2020 d???n 07/2021
 ggplot(NY, aes(x=Deaths, y=Last_Update)) + 
   geom_point(aes(colour = Deaths), colour = "red") + 
-  labs(title="S??? lu???ng ca t??? vong b???i covid 19 du???c xác nh???n ??? NewYork t???i M???
-              t??? 01/2020 d???n 07/2021")
+  labs(title="So luong ca tu vong boi covid 19 duoc xac nhan o NewYork tai MY
+              tu 01/2020 d???n 07/2021")
